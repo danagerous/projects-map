@@ -4,7 +4,7 @@
 <head> 
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> 
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/> 
-<title>Google Maps Javascript API v3 with Infoboxes, Checkbox filtering</title> 
+<title>KCP Stewardship Projects</title> 
 <style type="text/css">
    html { height: 100%; }
    body { height: 100%; margin: 0; padding: 0; }
@@ -138,10 +138,6 @@ function initialize() {
       var markerCluster = new MarkerClusterer(map, gmarkers, {maxZoom: 10});
       // == show or hide the categories initially ==
       show("stew");
-      //show("stay");
-      //hide("shop");
-      //hide("play");
-      //hide("community");
     }); //end JSON
   }); //end jQuery
 
@@ -152,11 +148,6 @@ function initialize() {
 
 <body onload="initialize()"> 
 <div id="map_canvas"></div>
-<div id="checkboxes">
-<form action="#">
-  <div><img style="vertical-align:middle"src="stew.png" title="Stewardship Projects" /><input type="checkbox" id="stewbox" onclick="boxclick(this,'stew')" /> Stewardship Projects</div>
-</form>
-</div>
 </body>
 
 </html>
