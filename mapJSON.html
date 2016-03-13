@@ -20,6 +20,8 @@
   padding: 10px 10px 8px 10px;
   }
 </style>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG8u8kpHf3GjsyQc5ydhSu_f-dj-J2cfs&callback=initMap"></script>
+
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 
 <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn-history/r358/trunk/infobox/src/infobox.js"></script>
@@ -119,6 +121,17 @@ function initialize() {
   }
   map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
+  // Load GeoJSON.
+  var poly = map.data.loadGeoJson('kcpBndry.geojson');
+
+// Set the stroke width for polygon
+  map.data.setStyle({
+    fillOpacity: 0.1,
+    strokeColor: 'red',
+    strokeWeight: 2,
+    clickable: false
+  });
+  
   google.maps.event.addListener(map, 'click', function() {
     ib.close();
   });
