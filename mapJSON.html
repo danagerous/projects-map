@@ -9,6 +9,11 @@
    html { height: 100%; }
    body { height: 100%; margin: 0; padding: 0; }
    #map_canvas { height: 100%; }
+   #logo {
+  position: absolute;
+  top: 20px; 
+  right: 150px;
+  }
 </style>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG8u8kpHf3GjsyQc5ydhSu_f-dj-J2cfs&callback=initMap"></script>
 
@@ -65,6 +70,24 @@ function createMarker(latlng,name,html,category) {
   });
 } // end createMarker
 
+// == shows all markers of a particular category ==
+function show(category) {
+  for (var i=0; i<gmarkers.length; i++) {
+    if (gmarkers[i].mycategory == category) {
+      gmarkers[i].setVisible(true);
+    }
+  }
+}
+
+// == hides all markers of a particular category ==
+function hide(category) {
+  for (var i=0; i<gmarkers.length; i++) {
+    if (gmarkers[i].mycategory == category) {
+      gmarkers[i].setVisible(false);
+    }
+  }
+}
+
 function myclick(i) {
   google.maps.event.trigger(gmarkers[i],"click");
 }
@@ -94,20 +117,24 @@ function initialize() {
   });
 
   $(document).ready(function(){
-    $.getJSON('kcp.json', function(data) {
+    $.getJSON('kcpProjects2015_latlng.json', function(data) {
       for (var i = 0; i < data.length; i++) {
         // obtain the attribues of each marker
         var item = data[i];
         var point = new google.maps.LatLng(item.ltt, item.lgt);
         var name = item.name;
-        var html = "<b>"+item.name+"<\/b><br \/><a href='"+ item.url +"' title='"+ item.name +"'>"+ item.url +"<\/a>";
-        var category = item.cat;
+        var html = "<b>"+item.name+"<\/b><br \/><br \/><b>Project<\/b><br \/>"+item.project+"<br \/><br \/><b>Description<\/b><br \/>"+item.description+"<br \/><br \/><b>Project Type<\/b><br \/>"+item.project_type+"<br \/><br \/><b>Habitat Type<\/b><br \/>"+item.habitat_type;
+        var category = item.org;
         // create the marker
         var marker = createMarker(point,name,html,category);
       }
       var markerCluster = new MarkerClusterer(map, gmarkers, {maxZoom: 10});
       // == show or hide the categories initially ==
-      show("stew");
+      show("ncc");
+      show("lwrgc");
+      show("rdek");
+      show("cvgta");
+      show("kcbp");
     }); //end JSON
   }); //end jQuery
 
@@ -118,6 +145,9 @@ function initialize() {
 
 <body onload="initialize()"> 
 <div id="map_canvas"></div>
+<div id="logo">
+  <div><img src="kcp_logo.png" title="Stewardship Projects" /></div>
+</div>
 </body>
 
 </html>
