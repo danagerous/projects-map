@@ -2,6 +2,6 @@
 KCP map using Google Maps API V3 showing projects in the Kootenay Region of British Columbia.
 
 Uses the following:  
-* underscore.js  
-* infobox.js  
-* [markerclusterer.js](https://github.com/googlemaps/js-marker-clusterer)  
+* [underscore.js](https://github.com/jashkenas/underscore)
+* [infobox.js](https://github.com/googlemaps/v3-utility-library/tree/master/infobox)
+* [markerclusterer.js](https://github.com/googlemaps/js-marker-clusterer)  )
