@@ -4,4 +4,4 @@ KCP map using Google Maps API V3 showing projects in the Kootenay Region of Brit
 Uses the following:  
 * underscore.js  
 * infobox.js  
-* markercluster.js  
+* [markerclusterer.js](https://github.com/googlemaps/js-marker-clusterer)  
