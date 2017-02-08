@@ -1,4 +1,4 @@
-# projects-map
+# Projects Map
 Kootenay Conservation Program map showing conservation projects in the Kootenay Region of British Columbia.
 
 Uses the following:  
