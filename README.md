@@ -1,4 +1,4 @@
-[![Project Status: Abandoned – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#Abandoned)
+[![Project Status: Abandoned – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/abandoned.svg)](http://www.repostatus.org/#abandoned)
 # Projects Map
 Kootenay Conservation Program map showing conservation projects in the Kootenay Region of British Columbia.
 
